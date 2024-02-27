@@ -2,8 +2,6 @@
 <h2 align="center"><b>Safe Notes</b></h2>
 <h4 align="center">Encrypted, Private note manager.</h4>
 
-<p align="center"><a href="https://play.google.com/store/apps/details?id=com.trisven.safenotes"><img src="https://raw.githubusercontent.com/keshav-space/safenotes/main/assets/github/get-it-on-google-play-badge.png" height='65px' ></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://f-droid.org/en/packages/com.trisven.safenotes/"><img src="https://raw.githubusercontent.com/keshav-space/safenotes/main/assets/github/get-it-on-f-droid-badge.png" height='65px'></a></p>
-
 <p align="center">
 <a href="https://github.com/keshav-space/safenotes/releases" alt="GitHub release"><img src="https://img.shields.io/github/v/release/keshav-space/safenotes?style=for-the-badge&logo=windowsterminal" ></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPLv3"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg?style=for-the-badge&logo=gnu"></a>
