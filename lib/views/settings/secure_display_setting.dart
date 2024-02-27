@@ -46,7 +46,7 @@ class _SecureDisplaySettingState extends State<SecureDisplaySetting> {
 
   Widget _settings() {
     return SettingsList(
-      platform: DevicePlatform.iOS,
+      platform: DevicePlatform.android,
       lightTheme: SettingsThemeData(),
       darkTheme: SettingsThemeData(
         settingsListBackground: AppThemes.darkSettingsScaffold,

@@ -47,7 +47,7 @@ class _BiometricSettingState extends State<BiometricSetting> {
 
   Widget _settings() {
     return SettingsList(
-      platform: DevicePlatform.iOS,
+      platform: DevicePlatform.android,
       lightTheme: SettingsThemeData(),
       darkTheme: SettingsThemeData(
         settingsListBackground: AppThemes.darkSettingsScaffold,

@@ -46,7 +46,7 @@ class _AutoRotationSettingState extends State<AutoRotationSetting> {
 
   Widget _settings() {
     return SettingsList(
-      platform: DevicePlatform.iOS,
+      platform: DevicePlatform.android,
       lightTheme: SettingsThemeData(),
       darkTheme: SettingsThemeData(
         settingsListBackground: AppThemes.darkSettingsScaffold,
