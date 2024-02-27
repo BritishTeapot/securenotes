@@ -22,8 +22,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/utils/text_direction_util.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/utils/text_direction_util.dart';
 
 class NoteFormWidget extends StatelessWidget {
   final StreamController<SessionState> sessionStateStream;

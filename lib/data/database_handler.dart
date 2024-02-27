@@ -19,7 +19,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 // Project imports:
-import 'package:safenotes/models/safenote.dart';
+import 'package:securenotes/models/safenote.dart';
 
 class NotesDatabase {
   static final NotesDatabase instance = NotesDatabase._init();

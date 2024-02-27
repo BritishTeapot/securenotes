@@ -15,8 +15,8 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/utils/text_direction_util.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/utils/text_direction_util.dart';
 
 class SearchWidget extends StatefulWidget {
   final String text;

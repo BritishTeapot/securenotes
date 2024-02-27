@@ -15,7 +15,7 @@
 import 'package:timeago/timeago.dart' as timeago;
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
+import 'package:securenotes/data/preference_and_config.dart';
 
 String humanTime({
   required DateTime time,

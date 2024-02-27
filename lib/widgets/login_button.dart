@@ -15,10 +15,10 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+////import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
+import 'package:securenotes/data/preference_and_config.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
@@ -39,9 +39,9 @@ class ButtonWidget extends StatelessWidget {
       child: SizedBox(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            shadowColor: PreferencesStorage.isThemeDark
+            /*shadowColor: PreferencesStorage.isThemeDark
                 ? NordColors.snowStorm.lightest
-                : NordColors.polarNight.darkest,
+                : NordColors.polarNight.darkest,*/
             minimumSize: Size.fromHeight(50),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),

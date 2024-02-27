@@ -23,14 +23,14 @@ import 'package:flutter/services.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/generic.dart';
-import 'package:safenotes/models/session.dart';
-import 'package:safenotes/utils/passphrase_util.dart';
-import 'package:safenotes/utils/snack_message.dart';
-import 'package:safenotes/utils/styles.dart';
-import 'package:safenotes/widgets/footer.dart';
-import 'package:safenotes/widgets/login_button.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/generic.dart';
+import 'package:securenotes/models/session.dart';
+import 'package:securenotes/utils/passphrase_util.dart';
+import 'package:securenotes/utils/snack_message.dart';
+import 'package:securenotes/utils/styles.dart';
+import 'package:securenotes/widgets/footer.dart';
+import 'package:securenotes/widgets/login_button.dart';
 
 class SetEncryptionPhrasePage extends StatefulWidget {
   final StreamController<SessionState> sessionStream;

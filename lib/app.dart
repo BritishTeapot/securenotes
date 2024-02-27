@@ -23,11 +23,11 @@ import 'package:local_session_timeout/local_session_timeout.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
-import 'package:safenotes/authwall.dart';
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/app_theme.dart';
-import 'package:safenotes/routes/route_generator.dart';
-import 'package:safenotes/utils/notes_color.dart';
+import 'package:securenotes/authwall.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/app_theme.dart';
+import 'package:securenotes/routes/route_generator.dart';
+import 'package:securenotes/utils/notes_color.dart';
 
 class App extends StatelessWidget {
   final StreamController<SessionState> sessionStateStream;

@@ -22,11 +22,11 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:crypto/crypto.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+//import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/utils/styles.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/utils/styles.dart';
 
 class ImportPassPhraseDialog extends StatefulWidget {
   @override
@@ -157,8 +157,8 @@ class _ImportPassPhraseDialogState extends State<ImportPassPhraseDialog> {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(NordColors.aurora.red),
+                /*backgroundColor:
+                    MaterialStateProperty.all(NordColors.aurora.red),*/
               ),
               child: _buttonText(formCancelButtonText, buttonTextFontSize),
               onPressed: () => Navigator.of(context).pop(),

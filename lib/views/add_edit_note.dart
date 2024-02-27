@@ -19,15 +19,15 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+//import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/unsaved_note_alert.dart';
-import 'package:safenotes/models/editor_state.dart';
-import 'package:safenotes/models/safenote.dart';
-import 'package:safenotes/widgets/note_widget.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/unsaved_note_alert.dart';
+import 'package:securenotes/models/editor_state.dart';
+import 'package:securenotes/models/safenote.dart';
+import 'package:securenotes/widgets/note_widget.dart';
 
 class AddEditNotePage extends StatefulWidget {
   final StreamController<SessionState> sessionStateStream;
@@ -130,11 +130,11 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isFormValid
+          /* backgroundColor: isFormValid
               ? (PreferencesStorage.isThemeDark
                   ? null
                   : NordColors.polarNight.darkest)
-              : Colors.grey.shade700,
+              : Colors.grey.shade700, */
         ),
         onPressed: onSaveCallback,
         child: Text(

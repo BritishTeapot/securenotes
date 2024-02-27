@@ -18,8 +18,8 @@ import 'dart:io';
 import 'package:media_scanner/media_scanner.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/file_handler.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/file_handler.dart';
 
 // Package imports:
 // import 'package:logger/logger.dart';

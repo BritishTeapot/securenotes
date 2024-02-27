@@ -25,14 +25,14 @@ import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/backup_import.dart';
-import 'package:safenotes/models/app_theme.dart';
-import 'package:safenotes/models/session.dart';
-import 'package:safenotes/utils/styles.dart';
-import 'package:safenotes/utils/url_launcher.dart';
-import 'package:safenotes/widgets/dark_mode.dart';
-import 'package:safenotes/widgets/footer.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/backup_import.dart';
+import 'package:securenotes/models/app_theme.dart';
+import 'package:securenotes/models/session.dart';
+import 'package:securenotes/utils/styles.dart';
+import 'package:securenotes/utils/url_launcher.dart';
+import 'package:securenotes/widgets/dark_mode.dart';
+import 'package:securenotes/widgets/footer.dart';
 
 class SettingsScreen extends StatefulWidget {
   final StreamController<SessionState> sessionStateStream;

@@ -22,11 +22,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/database_handler.dart';
-import 'package:safenotes/dialogs/delete_confirmation.dart';
-import 'package:safenotes/models/safenote.dart';
-import 'package:safenotes/routes/route_generator.dart';
-import 'package:safenotes/utils/text_direction_util.dart';
+import 'package:securenotes/data/database_handler.dart';
+import 'package:securenotes/dialogs/delete_confirmation.dart';
+import 'package:securenotes/models/safenote.dart';
+import 'package:securenotes/routes/route_generator.dart';
+import 'package:securenotes/utils/text_direction_util.dart';
 
 class NoteDetailPage extends StatefulWidget {
   final int noteId;

@@ -12,7 +12,7 @@
 */
 
 // Project imports:
-import 'package:safenotes/models/safenote.dart';
+import 'package:securenotes/models/safenote.dart';
 
 class ImportParser {
   final List<SafeNote> parsedNotes;

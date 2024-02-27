@@ -21,7 +21,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 // Project imports:
-import 'package:safenotes/utils/styles.dart';
+import 'package:securenotes/utils/styles.dart';
 
 class GenericDialog extends StatelessWidget {
   final IconData icon;

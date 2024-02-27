@@ -20,9 +20,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/app_theme.dart';
-import 'package:safenotes/utils/styles.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/app_theme.dart';
+import 'package:securenotes/utils/styles.dart';
 
 class LanguageSetting extends StatefulWidget {
   LanguageSetting({Key? key}) : super(key: key);

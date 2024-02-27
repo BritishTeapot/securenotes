@@ -20,8 +20,8 @@ import 'package:crypto/crypto.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/biometric_auth.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/biometric_auth.dart';
 
 class Session {
   static login(String passphrase) {

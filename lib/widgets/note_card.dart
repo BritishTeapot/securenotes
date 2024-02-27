@@ -19,12 +19,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/safenote.dart';
-import 'package:safenotes/utils/notes_color.dart';
-import 'package:safenotes/utils/string_utils.dart';
-import 'package:safenotes/utils/text_direction_util.dart';
-import 'package:safenotes/utils/time_utils.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/safenote.dart';
+import 'package:securenotes/utils/notes_color.dart';
+import 'package:securenotes/utils/string_utils.dart';
+import 'package:securenotes/utils/text_direction_util.dart';
+import 'package:securenotes/utils/time_utils.dart';
 
 class NoteCardWidget extends StatelessWidget {
   final SafeNote note;

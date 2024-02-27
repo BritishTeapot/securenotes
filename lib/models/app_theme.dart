@@ -15,10 +15,10 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+//import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
+import 'package:securenotes/data/preference_and_config.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode =
@@ -44,7 +44,13 @@ class AppThemes {
   static ThemeData get darkTheme =>
       PreferencesStorage.isDimTheme ? dimTheme : lightOutTheme;
 
-  static final ThemeData lightOutTheme = NordTheme.dark().copyWith(
+  static final ThemeData lightOutTheme =
+  // NordTheme.dark().copyWith(
+    ThemeData(
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan, brightness: Brightness.dark),
+      brightness: Brightness.dark,
+      useMaterial3: true,
+  /*
     textTheme: ThemeData.dark().textTheme.apply(
           fontFamily: 'NotoSerif',
         ),
@@ -65,35 +71,48 @@ class AppThemes {
       modalBackgroundColor: Colors.grey.shade900,
     ),
     //platform: TargetPlatform.iOS,
+   */
   );
 
-  static final ThemeData dimTheme = NordTheme.dark().copyWith(
+  static final ThemeData dimTheme =
+      ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan, brightness: Brightness.dark),
+        brightness: Brightness.dark,
+        useMaterial3: true,
+  //NordTheme.dark().copyWith(
+  /*
     textTheme: ThemeData.dark().textTheme.apply(
           fontFamily: 'NotoSerif',
         ),
     primaryTextTheme: ThemeData.dark().textTheme.apply(
           fontFamily: 'NotoSerif',
         ),
+   */
 
     //platform: TargetPlatform.iOS,
   );
 
-  static Color get darkSettingsScaffold => PreferencesStorage.isDimTheme
+  static Color get darkSettingsScaffold => /*PreferencesStorage.isDimTheme
       ? NordColors.polarNight.darkest
-      : Colors.black;
+      : */ Colors.black;
 
-  static Color? get darkSettingsCanvas => PreferencesStorage.isDimTheme
+  static Color? get darkSettingsCanvas => /* PreferencesStorage.isDimTheme
       ? NordColors.polarNight.darker
-      : Colors.grey.shade900;
+      : */ Colors.grey.shade900;
 
-  static final ThemeData lightTheme = NordTheme.light().copyWith(
-    textTheme: ThemeData.light().textTheme.apply(
+  static final ThemeData lightTheme =
+  //NordTheme.light().copyWith(
+  ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan, brightness: Brightness.light), // not the nord color, but anyway
+    brightness: Brightness.light,
+    useMaterial3: true,
+    /*textTheme: ThemeData.light().textTheme.apply(
           fontFamily: 'NotoSerif',
         ),
     primaryTextTheme: ThemeData.light().textTheme.apply(
           fontFamily: 'NotoSerif',
-        ),
-    unselectedWidgetColor: NordColors.frost.darker,
+        ), */
+    //unselectedWidgetColor: NordColors.frost.darker,
 
     //platform: TargetPlatform.iOS,
   );

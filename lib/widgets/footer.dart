@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
+import 'package:securenotes/data/preference_and_config.dart';
 
 Widget footer() {
   final double fontSize = 12;

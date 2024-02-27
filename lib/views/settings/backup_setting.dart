@@ -24,13 +24,13 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:workmanager/workmanager.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/app_theme.dart';
-import 'package:safenotes/utils/sheduled_task.dart';
-import 'package:safenotes/utils/storage_permission.dart';
-import 'package:safenotes/utils/styles.dart';
-import 'package:safenotes/utils/time_utils.dart';
-import 'package:safenotes/widgets/login_button.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/app_theme.dart';
+import 'package:securenotes/utils/sheduled_task.dart';
+import 'package:securenotes/utils/storage_permission.dart';
+import 'package:securenotes/utils/styles.dart';
+import 'package:securenotes/utils/time_utils.dart';
+import 'package:securenotes/widgets/login_button.dart';
 
 class BackupSetting extends StatefulWidget {
   BackupSetting({Key? key}) : super(key: key);

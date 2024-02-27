@@ -21,10 +21,10 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/models/app_theme.dart';
-import 'package:safenotes/utils/url_launcher.dart';
-import 'package:safenotes/widgets/dark_mode.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/models/app_theme.dart';
+import 'package:securenotes/utils/url_launcher.dart';
+import 'package:securenotes/widgets/dark_mode.dart';
 
 class HomeDrawer extends StatefulWidget {
   final VoidCallback onImportCallback;

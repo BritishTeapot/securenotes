@@ -26,14 +26,14 @@ import 'package:local_session_timeout/local_session_timeout.dart';
 import 'package:workmanager/workmanager.dart';
 
 // Project imports:
-import 'package:safenotes/app.dart';
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/generic.dart';
-import 'package:safenotes/dialogs/logout_alert.dart';
-import 'package:safenotes/models/editor_state.dart';
-import 'package:safenotes/models/session.dart';
-import 'package:safenotes/utils/sheduled_task.dart';
-import 'package:safenotes/views/settings/backup_setting.dart';
+import 'package:securenotes/app.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/generic.dart';
+import 'package:securenotes/dialogs/logout_alert.dart';
+import 'package:securenotes/models/editor_state.dart';
+import 'package:securenotes/models/session.dart';
+import 'package:securenotes/utils/sheduled_task.dart';
+import 'package:securenotes/views/settings/backup_setting.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,7 +82,7 @@ class SafeNotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final sessionConfig = SessionConfig(
       invalidateSessionForAppLostFocus: Duration(seconds: foucsTimeout),
-      invalidateSessionForUserInactiviity: Duration(seconds: inactivityTimeout),
+      invalidateSessionForUserInactivity: Duration(seconds: inactivityTimeout),
     );
 
     sessionConfig.stream.listen(sessionHandler);

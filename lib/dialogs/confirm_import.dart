@@ -20,10 +20,10 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+//import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 // Project imports:
-import 'package:safenotes/utils/styles.dart';
+import 'package:securenotes/utils/styles.dart';
 
 class ImportConfirm extends StatefulWidget {
   final int importCount;
@@ -110,8 +110,8 @@ class _ImportConfirmState extends State<ImportConfirm> {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(NordColors.aurora.red),
+                /*backgroundColor:
+                    MaterialStateProperty.all(NordColors.aurora.red),*/
               ),
               child: _buttonText(cancelButtonText, buttonTextFontSize),
               onPressed: () {

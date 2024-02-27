@@ -18,10 +18,10 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 // Project imports:
-import 'package:safenotes/models/safenote.dart';
-import 'package:safenotes/utils/notes_color.dart';
-import 'package:safenotes/utils/string_utils.dart';
-import 'package:safenotes/utils/text_direction_util.dart';
+import 'package:securenotes/models/safenote.dart';
+import 'package:securenotes/utils/notes_color.dart';
+import 'package:securenotes/utils/string_utils.dart';
+import 'package:securenotes/utils/text_direction_util.dart';
 
 class NoteTileWidgetCompact extends StatelessWidget {
   final SafeNote note;

@@ -15,7 +15,7 @@
 import 'package:permission_handler/permission_handler.dart';
 
 // Project imports:
-import 'package:safenotes/utils/device_info.dart';
+import 'package:securenotes/utils/device_info.dart';
 
 // return true on successful storage permission
 Future<bool> handleStoragePermission() async {

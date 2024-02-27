@@ -21,9 +21,9 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 // Project imports:
-import 'package:safenotes/models/file_handler.dart';
-import 'package:safenotes/utils/snack_message.dart';
-import 'package:safenotes/utils/styles.dart';
+import 'package:securenotes/models/file_handler.dart';
+import 'package:securenotes/utils/snack_message.dart';
+import 'package:securenotes/utils/styles.dart';
 
 class FileImportDialog extends StatelessWidget {
   final VoidCallback callback;

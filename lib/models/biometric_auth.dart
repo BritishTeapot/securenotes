@@ -15,7 +15,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
+import 'package:securenotes/data/preference_and_config.dart';
 
 // Project imports:
 

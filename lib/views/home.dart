@@ -25,20 +25,20 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 // Project imports:
-import 'package:safenotes/data/database_handler.dart';
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/backup_import.dart';
-import 'package:safenotes/models/safenote.dart';
-import 'package:safenotes/models/session.dart';
-import 'package:safenotes/routes/route_generator.dart';
-import 'package:safenotes/utils/notes_color.dart';
-import 'package:safenotes/utils/styles.dart';
-import 'package:safenotes/widgets/drawer.dart';
-import 'package:safenotes/widgets/note_card.dart';
-import 'package:safenotes/widgets/note_card_compact.dart';
-import 'package:safenotes/widgets/note_tile.dart';
-import 'package:safenotes/widgets/note_tile_compact.dart';
-import 'package:safenotes/widgets/search_widget.dart';
+import 'package:securenotes/data/database_handler.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/backup_import.dart';
+import 'package:securenotes/models/safenote.dart';
+import 'package:securenotes/models/session.dart';
+import 'package:securenotes/routes/route_generator.dart';
+import 'package:securenotes/utils/notes_color.dart';
+import 'package:securenotes/utils/styles.dart';
+import 'package:securenotes/widgets/drawer.dart';
+import 'package:securenotes/widgets/note_card.dart';
+import 'package:securenotes/widgets/note_card_compact.dart';
+import 'package:securenotes/widgets/note_tile.dart';
+import 'package:securenotes/widgets/note_tile_compact.dart';
+import 'package:securenotes/widgets/search_widget.dart';
 
 class HomePage extends StatefulWidget {
   final StreamController<SessionState> sessionStateStream;

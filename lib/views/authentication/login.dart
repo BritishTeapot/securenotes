@@ -23,19 +23,19 @@ import 'package:flutter/services.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:crypto/crypto.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+//import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
 
 // Project imports:
-import 'package:safenotes/data/preference_and_config.dart';
-import 'package:safenotes/dialogs/generic.dart';
-import 'package:safenotes/models/biometric_auth.dart';
-import 'package:safenotes/models/session.dart';
-import 'package:safenotes/utils/snack_message.dart';
-import 'package:safenotes/utils/styles.dart';
-import 'package:safenotes/widgets/footer.dart';
-import 'package:safenotes/widgets/login_button.dart';
+import 'package:securenotes/data/preference_and_config.dart';
+import 'package:securenotes/dialogs/generic.dart';
+import 'package:securenotes/models/biometric_auth.dart';
+import 'package:securenotes/models/session.dart';
+import 'package:securenotes/utils/snack_message.dart';
+import 'package:securenotes/utils/styles.dart';
+import 'package:securenotes/widgets/footer.dart';
+import 'package:securenotes/widgets/login_button.dart';
 
 class EncryptionPhraseLoginPage extends StatefulWidget {
   final StreamController<SessionState> sessionStream;
@@ -219,7 +219,7 @@ class _EncryptionPhraseLoginPageState extends State<EncryptionPhraseLoginPage>
                 'Exceeded number of attempts, try after {timeLeft} seconds'
                     .tr(namedArgs: {'timeLeft': timeLeft.toString()}),
                 style: TextStyle(
-                  color: NordColors.aurora.red,
+                  //color: NordColors.aurora.red,
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                 ),
@@ -324,9 +324,9 @@ class _EncryptionPhraseLoginPageState extends State<EncryptionPhraseLoginPage>
             padding: EdgeInsets.only(top: 10, bottom: 20),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                shadowColor: PreferencesStorage.isThemeDark
+                /*shadowColor: PreferencesStorage.isThemeDark
                     ? NordColors.snowStorm.lightest
-                    : NordColors.polarNight.darkest,
+                    : NordColors.polarNight.darkest,*/
                 minimumSize: Size(200, 50), //Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
