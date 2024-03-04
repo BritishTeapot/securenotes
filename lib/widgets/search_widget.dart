@@ -39,20 +39,12 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final styleActive = TextStyle(color: Colors.black);
-    final styleHint = TextStyle(color: Colors.black54);
-    final style = widget.text.isEmpty ? styleHint : styleActive;
-    final searchBoxRadius = 7.0;
+
     final bool enableIMEPLFlag = !PreferencesStorage.keyboardIncognito;
 
     return Container(
-      height: 42,
-      margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(searchBoxRadius),
-        color: Colors.white,
-        border: Border.all(color: Colors.black26),
-      ),
+      //height: 42,
+      margin: const EdgeInsets.fromLTRB(8, 4, 8, 0),
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: TextField(
         enableIMEPersonalizedLearning: enableIMEPLFlag,
@@ -60,29 +52,17 @@ class _SearchWidgetState extends State<SearchWidget> {
         controller: controller,
         enableInteractiveSelection: true,
         autofocus: false,
-        toolbarOptions: ToolbarOptions(
-          paste: true,
-          cut: true,
-          copy: true,
-          selectAll: true,
-        ),
         decoration: InputDecoration(
-          icon: Icon(Icons.search, color: style.color),
-          suffixIcon: widget.text.isNotEmpty
-              ? GestureDetector(
-                  child: Icon(Icons.close, color: style.color),
-                  onTap: () {
-                    controller.clear();
-                    widget.onChanged('');
-                    //FocusScope.of(context).requestFocus(FocusNode());
-                  },
-                )
-              : null,
+          prefixIcon: Icon(Icons.search),
+          suffixIcon: IconButton(
+            onPressed: controller.clear,
+            icon:  Icon(Icons.clear),
+          ),
           hintText: widget.hintText,
-          hintStyle: style,
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
-        style: style,
         onChanged: widget.onChanged,
       ),
     );
