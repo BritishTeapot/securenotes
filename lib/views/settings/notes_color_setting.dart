@@ -12,13 +12,14 @@
 */
 
 // Flutter imports:
+//import 'dart:js_interop';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
-import 'package:settings_ui/settings_ui.dart';
 
 // Project imports:
 import 'package:securenotes/data/preference_and_config.dart';
@@ -51,38 +52,22 @@ class _ColorPalletState extends State<ColorPallet> {
   }
 
   Widget _settings() {
-    return SettingsList(
-      platform: DevicePlatform.android,
-      lightTheme: SettingsThemeData(),
-      darkTheme: SettingsThemeData(
-        settingsListBackground: AppThemes.darkSettingsScaffold,
-        settingsSectionBackground: AppThemes.darkSettingsCanvas,
-      ),
-      sections: [
-        SettingsSection(
-          //title: Text('General'),
-          tiles: <SettingsTile>[
-            SettingsTile.switchTile(
-              initialValue: PreferencesStorage.isColorful,
-              title: Text('Colorful Notes'.tr()),
-              onToggle: (value) {
-                final provider =
-                    Provider.of<NotesColor>(context, listen: false);
-                provider.toggleColor();
-                setState(() {});
-              },
-              description: Text('Choose the note color theme from below'.tr()),
-            ),
-          ],
-        ),
-        CustomSettingsSection(
-          child: Column(
-            children: [
-              _colourPreview(),
-              _buildColourComboList(context),
-            ],
+    return ListView(
+      children: [
+        ListTile(
+          title: Text('Colorful Notes'.tr()),
+          trailing: Switch(
+            value: PreferencesStorage.isColorful,
+            onChanged: (value) {
+              final provider = Provider.of<NotesColor>(context, listen: false);
+              provider.toggleColor();
+              setState(() {});
+            },
           ),
+          subtitle: Text('Choose the note color theme from below'.tr()),
         ),
+        _colourPreview(),
+        _buildColourComboList(context),
       ],
     );
   }

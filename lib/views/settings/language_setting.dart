@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:easy_localization/easy_localization.dart';
-import 'package:settings_ui/settings_ui.dart';
+  
 
 // Project imports:
 import 'package:securenotes/data/preference_and_config.dart';
@@ -46,19 +46,9 @@ class _LanguageSettingState extends State<LanguageSetting> {
   }
 
   Widget _settings() {
-    return SettingsList(
-      platform: DevicePlatform.android,
-      lightTheme: SettingsThemeData(),
-      darkTheme: SettingsThemeData(
-        settingsListBackground: AppThemes.darkSettingsScaffold,
-        settingsSectionBackground: AppThemes.darkSettingsCanvas,
-      ),
-      sections: [
-        CustomSettingsSection(
-          child: CustomSettingsTile(
-            child: _buildLanguageList(context),
-          ),
-        ),
+    return ListView(
+      children: [
+        _buildLanguageList(context),
       ],
     );
   }

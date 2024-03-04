@@ -33,7 +33,6 @@ import 'package:securenotes/views/authentication/set_passphrase.dart';
 import 'package:securenotes/views/change_passphrase.dart';
 import 'package:securenotes/views/home.dart';
 import 'package:securenotes/views/note_view.dart';
-import 'package:securenotes/views/settings/autorotate_settings.dart';
 import 'package:securenotes/views/settings/backup_setting.dart';
 import 'package:securenotes/views/settings/biometric_setting.dart';
 import 'package:securenotes/views/settings/inactivity_setting.dart';
@@ -205,13 +204,6 @@ class RouteGenerator {
       case '/biometricSetting':
         return PageTransition(
           child: BiometricSetting(),
-          duration: Duration(milliseconds: transitionDuration),
-          type: transitionType,
-        );
-
-      case '/autoRotateSettings':
-        return PageTransition(
-          child: AutoRotationSetting(),
           duration: Duration(milliseconds: transitionDuration),
           type: transitionType,
         );

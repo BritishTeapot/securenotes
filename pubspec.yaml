@@ -37,7 +37,6 @@ dependencies:
   rename: ^3.0.1
   #flutter_nord_theme: ^2.1.0
   local_session_timeout: ^2.1.1
-  settings_ui: ^2.0.2
   material_design_icons_flutter: ^7.0.7296
   page_transition: ^2.0.9
   

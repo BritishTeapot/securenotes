@@ -20,7 +20,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:easy_localization/easy_localization.dart';
-import 'package:settings_ui/settings_ui.dart';
+
 import 'package:workmanager/workmanager.dart';
 
 // Project imports:
@@ -88,52 +88,40 @@ class _BackupSettingState extends State<BackupSetting> {
   }
 
   Widget _bodyBackup(BuildContext context) {
-    return SettingsList(
-      platform: DevicePlatform.android,
-      //lightTheme: SettingsThemeData(),
-      darkTheme: SettingsThemeData(
-        settingsListBackground: AppThemes.darkSettingsScaffold,
-        settingsSectionBackground: AppThemes.darkSettingsCanvas,
-      ),
-      sections: [
-        SettingsSection(
-          tiles: <SettingsTile>[
-            SettingsTile.switchTile(
-              initialValue: PreferencesStorage.isBackupOn,
-              title: Text('Backup'.tr()),
-              onToggle: (value) async {
-                await PreferencesStorage.setIsBackupOn(value);
-                if (value == true) {
-                  if (await handleBackupPermissionAndLocation() == true) {
-                    backupRegister();
-                    await onBackupNow();
-                  }
-                } else
-                  Workmanager().cancelAll();
-                setState(() => isBackupOn = value);
-              },
-            ),
-          ],
-        ),
-        CustomSettingsSection(
-          child: CupertinoPageScaffold(
-            child: Column(
-              children: [
-                iosStylePaddedCard(
-                  children: <Widget>[
-                    _buildUpperBackupView(),
-                    SizedBox(height: 10),
-                    Text(
-                        "This will create an encrypted local backup, which gets automatically updated every day. Moreover, the backup is designed such that it can be used in tandem with other open-source tools like SyncThing to keep the multiple redundant backups across different devices on the local network.\nTo switch to a new device, you would simply need to copy this backup file to the new device and import that in your new Safe Notes app.\nFor more, see FAQ."
-                            .tr()),
-                    //_buildButtons(context),
-                    SizedBox(height: 10),
-                    _buildBackupNowButton()
-                  ],
-                )
-              ],
-            ),
+    return ListView(
+      children: [
+        ListTile(
+          title: Text('Backup'.tr()),
+          trailing: Switch(
+            value: PreferencesStorage.isBackupOn,
+            onChanged: (value) async {
+              await PreferencesStorage.setIsBackupOn(value);
+              if (value == true) {
+                if (await handleBackupPermissionAndLocation() == true) {
+                  backupRegister();
+                  await onBackupNow();
+                }
+              } else
+                Workmanager().cancelAll();
+              setState(() => isBackupOn = value);
+            },
           ),
+        ),
+        Column(
+          children: [
+            iosStylePaddedCard(
+              children: <Widget>[
+                _buildUpperBackupView(),
+                SizedBox(height: 10),
+                Text(
+                    "This will create an encrypted local backup, which gets automatically updated every day. Moreover, the backup is designed such that it can be used in tandem with other open-source tools like SyncThing to keep the multiple redundant backups across different devices on the local network.\nTo switch to a new device, you would simply need to copy this backup file to the new device and import that in your new Safe Notes app.\nFor more, see FAQ."
+                        .tr()),
+                //_buildButtons(context),
+                SizedBox(height: 10),
+                _buildBackupNowButton()
+              ],
+            )
+          ],
         ),
       ],
     );

@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:easy_localization/easy_localization.dart';
-import 'package:settings_ui/settings_ui.dart';
+  
 
 // Project imports:
 import 'package:securenotes/data/preference_and_config.dart';
@@ -46,34 +46,32 @@ class _BiometricSettingState extends State<BiometricSetting> {
   }
 
   Widget _settings() {
-    return SettingsList(
-      platform: DevicePlatform.android,
-      lightTheme: SettingsThemeData(),
-      darkTheme: SettingsThemeData(
-        settingsListBackground: AppThemes.darkSettingsScaffold,
-        settingsSectionBackground: AppThemes.darkSettingsCanvas,
-      ),
-      sections: [
-        SettingsSection(
-          tiles: <SettingsTile>[
-            SettingsTile.switchTile(
-              initialValue: PreferencesStorage.isBiometricAuthEnabled,
-              title: Text('Enable biometric authentication'.tr()),
-              onToggle: (value) {
-                if (value)
-                  BiometricAuth.enable();
-                else
-                  BiometricAuth.disable();
+    return ListView(
 
-                setState(() {});
-              },
-              description: Text(
+      children: [
+
+            ListTile(
+
+              title: Text('Enable biometric authentication'.tr()),
+              trailing: Switch(
+                value: PreferencesStorage.isBiometricAuthEnabled,
+                onChanged: (value) {
+                  if (value)
+                    BiometricAuth.enable();
+                  else
+                    BiometricAuth.disable();
+
+                  setState(() {});
+                },
+              ),
+
+              subtitle: Text(
                 "Users are advised to assess their threat perception before enabling biometric authentication. Don't enable this if you're storing state secrets! Visit FAQs for more information."
                     .tr(),
               ),
             ),
-          ],
-        ),
+
+
       ],
     );
   }
