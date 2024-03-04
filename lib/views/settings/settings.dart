@@ -208,6 +208,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
             trailing: Icon(Icons.navigate_next),
             onTap: () async {
               await Navigator.pushNamed(context, '/inactivityTimerSettings');
+              showGenericDialog(
+                  context: context,
+                  icon: Icons.restart_alt,
+                  message: 'Close and open app for change to take effect'.tr()
+              );
               setState(() {});
             }),
         ListTile(

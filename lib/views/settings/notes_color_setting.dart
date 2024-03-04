@@ -14,7 +14,6 @@
 // Flutter imports:
 //import 'dart:js_interop';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -67,7 +66,8 @@ class _ColorPalletState extends State<ColorPallet> {
           subtitle: Text('Choose the note color theme from below'.tr()),
         ),
         _colourPreview(),
-        _buildColourComboList(context),
+        Divider(),
+        ..._buildColourComboList(context),
       ],
     );
   }
@@ -167,66 +167,35 @@ class _ColorPalletState extends State<ColorPallet> {
     );
   }
 
-  Widget _buildColourComboList(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: CupertinoFormSection.insetGrouped(
-        backgroundColor: PreferencesStorage.isThemeDark
-            ? AppThemes.darkSettingsScaffold
-            : Color(0x00000000),
-        decoration: PreferencesStorage.isThemeDark
-            ? BoxDecoration(
-                color: AppThemes.darkSettingsCanvas,
-                borderRadius: BorderRadius.circular(15),
-              )
-            : null,
-        children: [
-          ...List.generate(
-            items.length,
-            (index) => GestureDetector(
-              onTap: () => setState(() {
-                PreferencesStorage.setColorfulNotesColorIndex(index);
-                _selectedIndex = index;
-              }),
-              child: AbsorbPointer(
-                child: buildCupertinoFormRow(
-                  items[index].prefix,
-                  items[index].helper,
-                  selected: _selectedIndex == index,
-                ),
-              ),
-            ),
+  List<Widget> _buildColourComboList(BuildContext context) {
+    return
+        List.generate(
+          items.length,
+          (index) => buildFormRow(
+            items[index].prefix,
+            items[index].helper,
+            index,
           ),
-        ],
-      ),
     );
   }
 
-  Widget buildCupertinoFormRow(
-    String prefix,
-    String? helper, {
-    bool selected = false,
-  }) {
-    return Padding(
-      padding: EdgeInsets.only(top: 5, bottom: 5),
-      child: CupertinoFormRow(
-        prefix: Text(prefix.tr()),
-        helper: helper != null
+  Widget buildFormRow(String prefix, String? helper, int index) {
+    return ListTile(
+        title: Text(prefix.tr()),
+        subtitle: helper != null
             ? Text(
                 helper.tr(),
                 style: Theme.of(context).textTheme.bodySmall,
               )
             : null,
-        child: selected
-            ? const Padding(
-                padding: EdgeInsets.only(right: 5),
-                child: Icon(
-                  CupertinoIcons.check_mark,
-                  color: Color.fromARGB(255, 45, 118, 234),
-                  size: 20,
-                ),
-              )
-            : Container(),
-      ),
+        trailing: Radio(
+            groupValue: PreferencesStorage.colorfulNotesColorIndex,
+            value: index,
+            onChanged: (_) {
+              PreferencesStorage.setColorfulNotesColorIndex(index);
+              setState(() {_selectedIndex = index;});
+            },
+            )
     );
   }
 }
