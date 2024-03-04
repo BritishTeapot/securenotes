@@ -46,5 +46,10 @@ TextStyle appBarTitle = TextStyle(
   fontWeight: FontWeight.bold,
   letterSpacing: -0.4,
   fontSize: 20,
-  color: Colors.white,
+  //color: Colors.white,
+);
+
+TextStyle noNotesStyle = TextStyle(
+    fontSize: 30,
+    fontFamily: "MerriWeatherBlack"
 );
