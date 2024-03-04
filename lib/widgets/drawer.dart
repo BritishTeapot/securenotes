@@ -183,14 +183,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
     Widget? toggle,
     VoidCallback? onClicked,
   }) {
-    final double leftPaddingMenuItem = 5.0;
 
     return Padding(
       padding: EdgeInsets.only(top: topPadding),
       child: ListTile(
         horizontalTitleGap: 5,
-        contentPadding: EdgeInsets.only(left: leftPaddingMenuItem),
-        visualDensity: VisualDensity.compact,
         dense: true,
         leading: Icon(icon),
         title: AutoSizeText(
@@ -198,13 +195,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           minFontSize: 8,
           maxLines: 1,
           style: TextStyle(
-            fontFamily: 'MerriweatherBlack',
-            fontWeight: FontWeight.bold,
-            letterSpacing: -0.4,
             fontSize: 16,
-            color: PreferencesStorage.isThemeDark
-                ? Colors.white
-                : Colors.grey.shade600,
           ),
         ),
         trailing: toggle,
