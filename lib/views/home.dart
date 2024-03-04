@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
               : [
                   //_DevSessionListner(),
                   _gridListView(),
-                  _shortNotes(),
+                  _sortNotes(),
                 ],
         ),
         body: Column(
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
   //   );
   // }
 
-  Widget _shortNotes() {
+  Widget _sortNotes() {
     return IconButton(
       icon: !isNewFirst
           ? Icon(MdiIcons.sortCalendarAscending)
@@ -169,12 +169,12 @@ class _HomePageState extends State<HomePage> {
 
   Widget _handleAndBuildNotes() {
     final String noNotes = 'No Notes'.tr();
-    final double fontSize = 24.0;
+
 
     return Expanded(
       child: !isLoading
           ? notes.isEmpty
-              ? Text(noNotes, style: TextStyle(fontSize: fontSize))
+              ? Center(child: Text(noNotes, style: noNotesStyle))
               : (isGridView ? _buildNotes() : _buildNotesTile())
           : Center(child: CircularProgressIndicator()),
     );
@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildNotesTile() {
     return ListView.separated(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(16),
       itemCount: notes.length,
       itemBuilder: ((context, index) {
         final note = notes[index];
