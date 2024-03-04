@@ -54,11 +54,7 @@ class NoteCardWidget extends StatelessWidget {
         : DateFormat.yMMMd().format(note.createdTime);
 
     return Card(
-      shadowColor: PreferencesStorage.isThemeDark ? Colors.white : Colors.black,
       color: color,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
       child: Container(
         padding: EdgeInsets.all(10),
         child: Column(
