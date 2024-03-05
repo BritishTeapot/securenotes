@@ -15,7 +15,7 @@
 import 'dart:io';
 
 // Flutter imports:
- 
+
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -107,21 +107,32 @@ class _BackupSettingState extends State<BackupSetting> {
             },
           ),
         ),
-        Column(
-          children: [
-            iosStylePaddedCard(
-              children: <Widget>[
-                _buildUpperBackupView(),
-                SizedBox(height: 10),
-                Text(
-                    "This will create an encrypted local backup, which gets automatically updated every day. Moreover, the backup is designed such that it can be used in tandem with other open-source tools like SyncThing to keep the multiple redundant backups across different devices on the local network.\nTo switch to a new device, you would simply need to copy this backup file to the new device and import that in your new Safe Notes app.\nFor more, see FAQ."
-                        .tr()),
-                //_buildButtons(context),
-                SizedBox(height: 10),
-                _buildBackupNowButton()
-              ],
-            )
-          ],
+
+        Divider(),
+        ListTile(
+          leading: Icon(Icons.cloud_done),
+          title: Text('Last Backup:'.tr()),
+          subtitle: Text(
+            '{lastBackupTime}'
+                .tr(namedArgs: {'lastBackupTime': this.lastUpdateTime}),
+          ),
+          trailing: _buildBackupNowButton(),
+        ),
+        ListTile(
+          leading: Icon(Icons.folder),
+          title: Text('Location:'.tr()),
+          subtitle: Text(
+            ((this.validWorkingBackupFullyQualifiedPath == '')?
+                'None':
+                this.validWorkingBackupFullyQualifiedPath),
+          ),
+          trailing: _changeBackupLocationButton(),
+        ),
+        Divider(),
+        ListTile(
+          subtitle: Text(
+              "This will create an encrypted local backup, which gets automatically updated every day. Moreover, the backup is designed such that it can be used in tandem with other open-source tools like SyncThing to keep the multiple redundant backups across different devices on the local network.\nTo switch to a new device, you would simply need to copy this backup file to the new device and import that in your new Safe Notes app.\nFor more, see FAQ."
+                  .tr()),
         ),
       ],
     );
@@ -220,9 +231,9 @@ class _BackupSettingState extends State<BackupSetting> {
   Widget _buildBackupNowButton() {
     final String loginText = 'Backup Now'.tr();
 
-    return ButtonWidget(
-      text: loginText,
-      onClicked:
+    return ElevatedButton(
+      child: Text(loginText),
+      onPressed:
           validWorkingBackupFullyQualifiedPath.isNotEmpty && this.isBackupOn
               ? onBackupNow
               : null,
@@ -232,6 +243,18 @@ class _BackupSettingState extends State<BackupSetting> {
   Future<void> onBackupNow() async {
     await ScheduledTask.backup();
     await _refresh();
+  }
+
+  Widget _changeBackupLocationButton() {
+    final String loginText = 'Change location';
+
+    return ElevatedButton(
+      child: Text(loginText),
+      onPressed:
+      validWorkingBackupFullyQualifiedPath.isNotEmpty && this.isBackupOn
+          ? null // TODO: make backup path changeable
+          : null,
+    );
   }
 }
 
