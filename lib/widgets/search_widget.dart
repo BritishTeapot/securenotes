@@ -39,32 +39,26 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-
     final bool enableIMEPLFlag = !PreferencesStorage.keyboardIncognito;
 
-    return Container(
-      //height: 42,
-      margin: const EdgeInsets.fromLTRB(8, 4, 8, 0),
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: TextField(
-        enableIMEPersonalizedLearning: enableIMEPLFlag,
-        textDirection: getTextDirecton(widget.text),
-        controller: controller,
-        enableInteractiveSelection: true,
-        autofocus: false,
-        decoration: InputDecoration(
-          prefixIcon: Icon(Icons.search),
-          suffixIcon: IconButton(
-            onPressed: controller.clear,
-            icon:  Icon(Icons.clear),
-          ),
-          hintText: widget.hintText,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        onChanged: widget.onChanged,
+    return TextField(
+      enableIMEPersonalizedLearning: enableIMEPLFlag,
+      textDirection: getTextDirecton(widget.text),
+      controller: controller,
+      enableInteractiveSelection: true,
+      autofocus: false,
+      decoration: InputDecoration(
+        prefixIcon: Icon(Icons.search),
+        //suffixIcon: IconButton(
+        //  onPressed: controller.clear,
+        //  icon:  Icon(Icons.clear),
+        //),
+        hintText: widget.hintText,
+        //border: OutlineInputBorder(
+        //  borderRadius: BorderRadius.circular(10),
+        //),
       ),
+      onChanged: widget.onChanged,
     );
   }
 }

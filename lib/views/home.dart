@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
   late List<SafeNote> notes;
   late List<SafeNote> allnotes;
   bool isLoading = false;
+  bool isSearchOn = false;
   String query = '';
   bool isHiddenImport = true;
   bool isNewFirst = PreferencesStorage.isNewFirst;
@@ -100,23 +101,34 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         drawer: _buildDrawer(context),
         appBar: AppBar(
-          title: Text(
-            'Safe Notes'.tr(),
-            style: appBarTitle,
-          ),
+          title: (isSearchOn)
+              ? _buildSearch()
+              : Text(
+                  'Secure Notes'.tr(),
+                  style: appBarTitle,
+                ),
           actions: isLoading
               ? null
-              : [
-                  //_DevSessionListner(),
-                  _gridListView(),
-                  _sortNotes(),
-                ],
+              : (isSearchOn)
+                  ? [
+                      _closeSearch(),
+                    ]
+                  : [
+                      //_DevSessionListner();
+                      _searchNotes(),
+                      _gridListView(),
+                      _sortNotes(),
+                    ],
         ),
         body: Column(
-          children: [
-            _buildSearch(),
-            _handleAndBuildNotes(),
-          ],
+          children: (isSearchOn)
+              ? <Widget>[
+                  //_buildSearch(),
+                  _handleAndBuildNotes(),
+                ]
+              : <Widget>[
+                  _handleAndBuildNotes(),
+                ],
         ),
         floatingActionButton: _addANewNoteButton(context),
       ),
@@ -125,9 +137,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _gridListView() {
     return IconButton(
-      icon: !isGridView
-          ? Icon(Icons.grid_view_outlined)
-          : Icon(Icons.splitscreen_outlined),
+      icon: !isGridView ? Icon(Icons.grid_view) : Icon(Icons.splitscreen),
       onPressed: () {
         setState(() {
           PreferencesStorage.setIsGridView(!isGridView);
@@ -167,9 +177,33 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget _searchNotes() {
+    return IconButton(
+      icon: Icon(Icons.search),
+      onPressed: () {
+        setState(() {
+          isSearchOn = true;
+        });
+        ;
+      },
+    );
+  }
+
+  Widget _closeSearch() {
+    return IconButton(
+      icon: Icon(Icons.close),
+      onPressed: () {
+        setState(() {
+          isSearchOn = false;
+          _searchNote('');
+        });
+        ;
+      },
+    );
+  }
+
   Widget _handleAndBuildNotes() {
     final String noNotes = 'No Notes'.tr();
-
 
     return Expanded(
       child: !isLoading
