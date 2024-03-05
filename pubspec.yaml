@@ -84,7 +84,7 @@ flutter_native_splash:
 
   fullscreen: true
 
-flutter_launcher_icons:
+flutter_icons:
   android: true
   ios: false
   image_path: "assets/images/icon.png"
